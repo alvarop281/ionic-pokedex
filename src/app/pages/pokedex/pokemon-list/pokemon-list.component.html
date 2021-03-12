@@ -1,0 +1,37 @@
+<ion-content class="poke-list-xs" *ngIf="deviceXs">
+
+    <ion-card class="poke-card" (click)="_selected(poke.id)" *ngFor="let poke of pokeList">
+        <ion-card-header>{{poke.id}}</ion-card-header>
+        <ion-card-subtitle>{{poke.name | titlecase}}</ion-card-subtitle>
+        <ion-avatar>
+            <img src="{{ imgUri + poke.id + '.png' }}">
+        </ion-avatar>
+    </ion-card>
+
+    <ion-infinite-scroll threshold="200px" (ionInfinite)="loadData($event)">
+
+        <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more Pokémon…">
+        </ion-infinite-scroll-content>
+
+    </ion-infinite-scroll>
+</ion-content>
+
+
+<ion-content class="poke-list" *ngIf="!deviceXs">
+
+    <ion-card class="poke-card" (click)="_selected(poke.id)" *ngFor="let poke of pokeList">
+        <ion-card-header>{{poke.id}}</ion-card-header>
+        <ion-card-subtitle>{{poke.name | titlecase}}</ion-card-subtitle>
+        <ion-avatar>
+            <img src="{{ imgUri + poke.id + '.png' }}">
+        </ion-avatar>
+    </ion-card>
+
+    <ion-infinite-scroll threshold="200px" (ionInfinite)="loadData($event)">
+
+        <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more Pokémon…">
+        </ion-infinite-scroll-content>
+
+    </ion-infinite-scroll>
+
+</ion-content>

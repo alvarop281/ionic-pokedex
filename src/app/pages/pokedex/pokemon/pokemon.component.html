@@ -1,0 +1,71 @@
+<ion-content class="poke-data-xs" *ngIf="deviceXs">
+    <ion-card *ngIf="pokemon">
+        <ion-card-header>
+            <ion-card-subtitle>{{pokemon.id}}</ion-card-subtitle>
+
+            <ion-card-title>{{ pokemon.name | titlecase }}</ion-card-title>
+        </ion-card-header>
+
+        <ion-card-content>
+
+            <ion-card-subtitle *ngFor="let type of pokemonType">
+                {{ type | titlecase }}
+            </ion-card-subtitle>
+
+        </ion-card-content>
+
+        <img *ngIf="pokemon.id != ''" class="poke-data-img" [src]=" img + pokemon.id + '.svg' " />
+
+        <ion-card-content>
+            <ion-card-subtitle>
+                Height: {{pokemon.height}}
+            </ion-card-subtitle>
+            <ion-card-subtitle>
+                Weight: {{pokemon.weight}}
+            </ion-card-subtitle>
+        </ion-card-content>
+
+        <ion-card-content class="evolution-card">
+
+            <ion-img class="evolution-card-img" (click)="_selected(evolution)" *ngFor="let evolution of pokemon.evolution" [src]=" imgEvolution + evolution + '.png' "></ion-img>
+
+        </ion-card-content>
+    </ion-card>
+</ion-content>
+
+
+<ion-content class="poke-data" *ngIf="!deviceXs">
+    <ion-card *ngIf="pokemon">
+        <ion-card-header>
+            <ion-card-subtitle>{{pokemon.id}}</ion-card-subtitle>
+
+            <ion-card-title>{{ pokemon.name | titlecase }}</ion-card-title>
+        </ion-card-header>
+
+        <ion-card-content>
+
+            <ion-card-subtitle *ngFor="let type of pokemonType">
+                {{ type | titlecase }}
+            </ion-card-subtitle>
+
+        </ion-card-content>
+
+        <img *ngIf="pokemon.id != ''" class="poke-data-img" [src]=" img + pokemon.id + '.svg' " />
+
+        <ion-card-content>
+            <ion-card-subtitle>
+                Height: {{pokemon.height}}
+            </ion-card-subtitle>
+            <ion-card-subtitle>
+                Weight: {{pokemon.weight}}
+            </ion-card-subtitle>
+        </ion-card-content>
+
+        <ion-card-content class="evolution-card">
+
+            <ion-img class="evolution-card-img" (click)="_selected(evolution)" *ngFor="let evolution of pokemon.evolution" [src]=" imgEvolution + evolution + '.png' "></ion-img>
+
+        </ion-card-content>
+    </ion-card>
+
+</ion-content>

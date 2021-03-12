@@ -1,0 +1,70 @@
+.poke-dashboard {
+    display: inline;
+    width: 100vw;
+    .poke-data {
+        height: 100vh;
+        width: 69vw;
+        overflow: hidden;
+        ion-card {
+            @include whitoutMargin;
+            @include flexCenter(column);
+            justify-content: space-between;
+            width: 100%;
+            height: 100%;
+            background-color: #142240;
+            img {
+                @include whitoutMargin;
+                text-align: center;
+                height: 35vh;
+            }
+            ion-card-content {
+                @include whitoutMargin;
+                height: 3vh;
+                width: 100%;
+                justify-content: space-between;
+                @include flexCenter(row);
+                ion-card-subtitle {
+                    @include whitoutMargin;
+                    color: #F5E9DC;
+                    padding-left: 2em;
+                    padding-right: 2em;
+                }
+            }
+            ion-card-header {
+                @include whitoutMargin;
+                @include flexCenter(row);
+                width: 100%;
+                height: 10vh;
+                ion-card-subtitle {
+                    @include whitoutMargin;
+                    @include flexCenter(column);
+                    text-align: center;
+                    background-color: #F5E9DC;
+                    height: 100%;
+                    width: 90px;
+                    color: #142240;
+                    font-size: 36px;
+                    font-weight: bolder;
+                    border-radius: 0 0 30px 0;
+                }
+                ion-card-title {
+                    width: 100%;
+                    @include whitoutMargin;
+                    @include flexCenter(column);
+                    text-align: center;
+                    color: #F5E9DC;
+                    font-size: 36px;
+                }
+            }
+            .evolution-card {
+                height: 20vh;
+                @include flexCenter(row);
+                .evolution-card-img {
+                    width: 12vw;
+                    height: 100%;
+                    @include flexCenter(row);
+                }
+            }
+        }
+    }
+}
